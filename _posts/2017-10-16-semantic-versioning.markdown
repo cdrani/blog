@@ -21,7 +21,7 @@ What does this mean? Let's take a look at express for example. Currently it's at
 
 > 16 is minor version
 
-> 2 is path version
+> 2 is patch version
 
 Changes to the version number are dependent on the changes to the project. The patch number (Z) is increased for any bug fixes. The minor version (Y) is increased for any new functionality and/or featuresadded to the project.
 
