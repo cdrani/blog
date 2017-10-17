@@ -11,13 +11,13 @@ I have been creating node projects for a few months now, but I've noticed that t
 ## So... How Do Keep Track Of Our Projects?
 The solution is semantic versioning, which is defining a project version as `X.Y.Z`, where:
 > X is major version
-> Y is minor version
-> Z is patch version
+Y is minor version
+Z is patch version
 
 What does this mean? Let's take a look at express for example. Currently it's at version 4.16.2.
 > 4 is major version
-> 16 minor version
-> 2 is path version
+16 minor version
+2 is path version
 
 Changes to the version number are dependent on the changes to the project. The patch number (Z) is increased for any bug fixes. The minor version (Y) is increased for any new functionality and/or featuresadded to the project.
 ***NOTE:*** For minor and patch versions, there must be no breaking changes, i.e the current version cannot not have any conflicts with any previous versions on the same major version.
@@ -25,16 +25,18 @@ Changes to the version number are dependent on the changes to the project. The p
 Lastly, the major version is increased if, and only if, a breaking change is introduced, such as changing the APIs.
 
 ## What Version Should We Start Our Projects Then?
-Hmmm... I usually generate my package.json using `npm init -y` to bypass all the initial configurations as I know I'll come back to it later. The default version in package.json is `1.0.0` and that's the one I will use as my start-off point. However, I have also seen versions starting at `0.0.0` with increasing minor and patch versions `0.15.6`. This means it's up to the project owner/company to decide when/where to introduce new versions depending on their release schedule.
+Hmmm... I usually generate my package.json using `npm init -y` to bypass all the initial configurations as I know I'll come back to it later. The default version in package.json is `1.0.0` and that's the one I will use as my start-off point. However, I have also seen versions starting at `0.0.0`. This means it's up to the project owner/company to decide when/where to introduce new versions depending on their release schedule.
 
 ## Example Please!
 Of course! Let's have a simple one to explain the concepts above. You can follow along if you like, but the example should be simple enough just as a visual - in either case you can always refer to the repo [semver-example](https://www.github.com/cdrainxv/semver-example).
 
 1) Make a directory to place your project in and initial it as a node project.
     > mkdir semver-example && cd semver-example
-    > npm init -y
+    npm init -y
+
 
     You should now have a package.json somewhat like this (note: mine has been configured):
+
     ```
     {
       "name": "semver-example",
@@ -52,7 +54,8 @@ Of course! Let's have a simple one to explain the concepts above. You can follow
 
 2) Next we need an index.js and math.js. In math.js we will add a Math class with add and substract methods, whereas in index.js we will import that Math class and console the results of the add and sub methods to the console.
 
-    **math.js**:
+    **math.js**
+
     ```
     'use strict'
     /**
@@ -75,7 +78,8 @@ Of course! Let's have a simple one to explain the concepts above. You can follow
     module.exports = new Math(9, 3)
     ```
 
-    **index.js**:
+    **index.js**
+
     ```
     const Math = require('./math')
     const add = Math.add()
@@ -102,6 +106,7 @@ Since this is a bug fix (aka patch), semver requires that this change is reflect
 4) The add and sub methods are bored of each other - they want more company. Let's add a div and mult function in the Math class.
     
     ***index.js***
+
     ```
     const Math = require('./math')
     const add = Math.add()
@@ -116,6 +121,7 @@ Since this is a bug fix (aka patch), semver requires that this change is reflect
     ```
 
     ***math.js***
+
     ```
     'use strict'
     /**
@@ -154,6 +160,7 @@ Wait a minute! New functions?! Aren't these new features in the Math class? Yes 
 5) Everything appears to be well and dandy, but we have yet to update our major version. I think it's time to introduce a breaking change. Update your index.js and math.js files to resemble the following:
 
     ***index.js***
+
     ```
     const Math = require('./math')
 
@@ -172,6 +179,7 @@ Wait a minute! New functions?! Aren't these new features in the Math class? Yes 
     ```
 
     ***math.js***
+
     ```
     'use strict'
     /**
@@ -204,6 +212,7 @@ What's new? We removed the four methods we had in our class and placed them in a
 Now the important question - is this a breaking change? We can determine this by trying to make use of the functionality we had in the previous versions. Recall we had a `add(), sub(), div(), mult()` methods on our Math class. Do they still work? Let's find out! Comment out the the entire **index.js** file except for the require line. Your file should have the following at the top:
    
     **index.js**
+
     ```
     const Math = require('./math')
     const add = Math.add()
@@ -238,6 +247,7 @@ Oh right! Something is still amiss. We had decided that this was a breaking chan
 I think we should update the naming of the Math class to MathOps (Math Operations) in the math.js file and we might as well change Math to mathOps in the index.js file to match:
     
     ***math.js***
+
     ```
     'use strict'
     /**
@@ -266,6 +276,7 @@ I think we should update the naming of the Math class to MathOps (Math Operation
     ```
 
     ***index.js***
+
     ```
     const mathOps = require('./math')
 
@@ -286,6 +297,7 @@ I think we should update the naming of the Math class to MathOps (Math Operation
 Awesome! Now we can go to bed without any nightmares. Last step is to update the patch version to reflect the bug fix: `2.0.1`.
 
 ---
+
 Great! That's just about the gist of semantic version. For an indepth look into it, reference [semver](http://semver.org/).
 
 Just as a reminder, you can take a look at the example project here: [semver-example](https://www.github.com/cdrainxv/semver-example)
