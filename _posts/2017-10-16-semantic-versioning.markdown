@@ -2,13 +2,13 @@
 layout: post
 title:  "Semantic Versioning"
 date:   2017-10-16 20:14:31 -0600
-categories: versioning node semver
+categories: semver
 ---
 
 # Semantic Versioning
 I have been creating node projects for a few months now, but I've noticed that the version number in my package.json is always at 1.0.0, regardless of any new changes, fixes, or functionality I add to the projects. An evergrowing, maintainable project should have different versions to log the journey.
 
-## So... How Do Keep Track Of Our Projects?
+## So... How Do We Keep Track Of Our Projects?
 The solution is semantic versioning, which is defining a project version as `X.Y.Z`, where:
 > X is major version
 
