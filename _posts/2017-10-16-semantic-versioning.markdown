@@ -11,13 +11,13 @@ I have been creating node projects for a few months now, but I've noticed that t
 ## So... How Do Keep Track Of Our Projects?
 The solution is semantic versioning, which is defining a project version as `X.Y.Z`, where:
 > X is major version
-Y is minor version
-Z is patch version
+> Y is minor version
+> Z is patch version
 
 What does this mean? Let's take a look at express for example. Currently it's at version 4.16.2:
 > 4 is major version
-16 is minor version
-2 is path version
+> 16 is minor version
+> 2 is path version
 
 Changes to the version number are dependent on the changes to the project. The patch number (Z) is increased for any bug fixes. The minor version (Y) is increased for any new functionality and/or featuresadded to the project.
 
@@ -33,7 +33,7 @@ Of course! Let's have a simple one to explain the concepts above. You can follow
 
 1) Make a directory to place your project in and initial it as a node project.
 > mkdir semver-example && cd semver-example
-npm init -y
+> npm init -y
 
 
 You should now have a package.json somewhat like this (note: mine has been configured):
@@ -55,7 +55,7 @@ You should now have a package.json somewhat like this (note: mine has been confi
 
 2) Next we need an **index.js** and **math.js**. In **math.js** we will add a Math class with add and substract methods, whereas in **index.js** we will import that Math class and console the results of the add and sub methods to the console.
 
-    **math.js**
+    __math.js__
 
 
     {% highlight javascript linenos %}
@@ -81,7 +81,7 @@ You should now have a package.json somewhat like this (note: mine has been confi
     {% endhighlight %}
 
 
-    **index.js**
+    __index.js__
 
 
     {% highlight javascript linenos %}
@@ -96,7 +96,7 @@ You should now have a package.json somewhat like this (note: mine has been confi
 3) Hmmm... strange. If we run our current project in the node console (`node index.js`), we get this:
 
 > add: 27
-sub: 6
+> sub: 6
 
 
 Surely the addition of `9 + 3` is ***12*** and not 27! It seems like we have a bug here! Looking at this line: 
@@ -110,7 +110,7 @@ Since this is a bug fix (aka patch), semver requires that this change is reflect
 
 4) The add and sub methods are bored of each other - they want more company. Let's add a div and mult function in the Math class.
     
-    **index.js**
+    __index.js__
 
 
     {% highlight javascript linenos %}
@@ -127,7 +127,7 @@ Since this is a bug fix (aka patch), semver requires that this change is reflect
     {% endhighlight %}
 
 
-    **math.js**
+    __math.js__
 
 
     {% highlight javascript linenos %}
@@ -167,7 +167,7 @@ Wait a minute! New functions?! Aren't these new features in the Math class? Yes 
 
 5) Everything appears to be well and dandy, but we have yet to update our major version. I think it's time to introduce a breaking change. Update your index.js and math.js files to resemble the following:
 
-    **index.js**
+    __index.js__
 
 
     {% highlight javascript linenos %}
@@ -188,7 +188,7 @@ Wait a minute! New functions?! Aren't these new features in the Math class? Yes 
     {% endhighlight %}
 
 
-    **math.js**
+    __math.js__
 
 
     {% highlight javascript linenos %}
@@ -222,7 +222,7 @@ What's new? We removed the four methods we had in our class and placed them in a
 
 Now the important question - is this a breaking change? We can determine this by trying to make use of the functionality we had in the previous versions. Recall we had a `add(), sub(), div(), mult()` methods on our Math class. Do they still work? Let's find out! Comment out the the entire **index.js** file except for the require line. Your file should have the following at the top:
    
-    **index.js**
+    __index.js__
 
 
     {% highlight javascript linenos %}
@@ -258,7 +258,7 @@ Oh right! Something is still amiss. We had decided that this was a breaking chan
 
 I think we should update the naming of the Math class to MathOps (Math Operations) in the math.js file and we might as well change Math to mathOps in the index.js file to match:
     
-    **math.js**
+    __math.js__
 
 
     {% highlight javascript linenos %}
@@ -289,8 +289,8 @@ I think we should update the naming of the Math class to MathOps (Math Operation
     {% endhighlight %}
 
 
-    **index.js**
-    
+    __index.js__
+
 
     {% highlight javascript linenos %}
     const mathOps = require('./math')
