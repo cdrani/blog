@@ -2,6 +2,7 @@
 layout: post
 title:  "Semantic Versioning"
 date:   2017-10-16 20:14:31 -0600
+comments: true
 categories: semver
 ---
 

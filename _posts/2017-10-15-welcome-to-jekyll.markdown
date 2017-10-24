@@ -2,6 +2,7 @@
 layout: post
 title:  "Welcome to cdrainxv!"
 date:   2017-10-15 13:34:31 -0600
+comments: true
 categories: intro
 ---
 {% highlight javascript %}

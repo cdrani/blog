@@ -18,9 +18,13 @@ email: cdrainxv@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   A record keeping journal of my software development career.
 baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://cdrainxv.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: cdrainxv
 github_username:  cdrainxv
+google_analytics: UA-NNNNNNNN-N
+disqus:
+  shortname: cdrainxv
+
 
 # Build settings
 markdown: kramdown
