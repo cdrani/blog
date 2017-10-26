@@ -24,7 +24,7 @@ What does this mean? Let's take a look at express for example. Currently it's at
 >
 > 2 is patch version
 
-Changes to the version number are dependent on the changes to the project. The patch number (Z) is increased for any bug fixes. The minor version (Y) is increased for any new functionality and/or featuresadded to the project.
+Changes to the version number are dependent on the changes to the project. The patch number (Z) is increased for any bug fixes. The minor version (Y) is increased for any new functionality and/or features added to the project.
 
 ***NOTE:*** For minor and patch versions, there must be no breaking changes, i.e the current version cannot not have any conflicts with any previous versions on the same major version.
 
@@ -35,6 +35,19 @@ Hmmm... I usually generate my package.json using `npm init -y` to bypass all the
 
 ## Example Please!
 Of course! Let's have a simple one to explain the concepts above. You can follow along if you like, but the example should be simple enough just as a visual - in either case you can always refer to the repo [semver-example](https://www.github.com/cdrainxv/semver-example).
+
+####Project File Structure
+```
+semver-example
+|
++-- index.js
+|
++-- math.js
+|
++-- package.json
+```
+
+
 
 1) Make a directory to place your project in and initial it as a node project.
 > mkdir semver-example && cd semver-example
