@@ -85,7 +85,7 @@ EX:
 >
 > npm config set init.author.name cdrainxv
 >
-> npm config set init.author.email cdrainxv#users.noreply.github.com
+> npm config set init.author.email cdrainxv@users.noreply.github.com
 >
 > npm config set init.author.url https://github.com/cdrainxv
 >
@@ -130,8 +130,8 @@ which outputs this **package.json**:
 
 ```json
 {
-  customField: 'Custom Field',
-  otherCustomField: 'This field is really cool'
+  "customField": "Custom Field",
+  "otherCustomField": "This field is really cool"
 }
 ```
 
