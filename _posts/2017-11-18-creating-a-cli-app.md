@@ -162,13 +162,13 @@ To test the CLI locally, run **npm link** and try it out anywhere in your termin
 
 `xk -s 199` or `xk --specific 145`
 
-![specific]({{ "/assets/images/xkcd_specific.png" | absolute_url_}})
+![specific]({{ "/assets/images/xkcd_specific.png" | absolute_url }})
 
 ### help: 
 
 `xk -h` or `xk --help`
 
-![help]({{ "/assets/images/xkcd_help.png" | absolute_url_}})
+![help]({{ "/assets/images/xkcd_help.png" | absolute_url }})
 
 
 
