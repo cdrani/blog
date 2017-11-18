@@ -147,7 +147,6 @@ The very first line is required to inform that this file is an executable, i.e a
    ```
 
 
-
 ## IMPLEMENTATION: TEST
 
 To test the CLI locally, run **npm link** and try it out anywhere in your terminal with the options provided:
@@ -172,15 +171,23 @@ To test the CLI locally, run **npm link** and try it out anywhere in your termin
 
 
 
-##UPCOMING FEATURES
+
+
+## UPCOMING FEATURES/UPDATES
 
 Everything seems to be in order now and we are essentially finished based on the constraints I setup at the beginning. However I hope to add the following functionality soon:
 
 - next option to get the next comic
+
 - previous option to get the previous comic
+
 - random option to get a random comic
+
 - add some tests
+
 - publish on npm
+
+  ​
 
 
 
