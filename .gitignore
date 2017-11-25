@@ -3,3 +3,5 @@ _drafts
 .sass-cache
 .jekyll-metadata
 Gemfile.lock
+*~
+*swp
