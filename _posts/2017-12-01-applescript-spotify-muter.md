@@ -17,7 +17,10 @@ learn (** cough machine learning cough **).
 > NOTE: Applescripts will only work on a mac ecosystem.
 
 Now that that preamble is over, let's create a script that's **human-readable**
-using applescript.
+using applescript. Notabley, we could also write it using javascript using the
+"applescript editor" app. If we were to not use the app and still want to write
+the script using javascript, then we would need our script to be executed in a
+node env: `#!/usr/bin/env node`, I suppose.
 
 ## IMPLEMENTATION: SETUP
 
@@ -47,24 +50,24 @@ set artist_name to artist of current track
 3. This is now the crux of the entire script: muting/unmuting the app based on
    the player state. If there's no artist, then mostly there's an advert on, and
    we want to mute the app. On the other hand if there's a song playing we want
-   to unmute the app. Additionally we want to display the **_track_name_**,
-   **_artist_name_**, **_album_name_**, or any other variables you captured
-   earlier:
+   to unmute the app. Additionally we want to display the **_track_name_** and
+   the **_artist_name_**. Additonally we could also retrieve other information,
+   such as the **_album_name_**, or any other variables you captured earlier:
 
 ```
 if artist_name > 0
   # track has artist set and mostly likely a song
   set volume without output muted
-  "♫ " & track_name
+  "♫ " & track_name & " - " & artist_name
 else
   # track does not have artist set and most likely an advert
   set volume with output muted
-  "~ " & track_name
+  "~ ADVERT"
 end if
 ```
 
 4. And that's about it - other than closing the earlier if statements and
-   telling Spotify that's the end of commands. Here's the completed script:
+   telling Spotify that's the end of the commands. Here's the completed script:
 
 ```bash
 #!/usr/bin/env osascript
@@ -79,21 +82,19 @@ tell application "Spotify"
       if artist_name > 0
         # track has artist set and most likely a song
         set volume without output muted
-        "♫ " & track_name
+        "♫ " & track_name & " - " & artist_name
       else
         # track doesn't have an artist set and is most likely an advert
         set volume with output muted
-        "~ " & track_name
+        "~ ADVERT"
       end if
-
     end if
-
   end if
-
 end tell
 ```
 
-5. Now we want to make the script executable. I save mine as **spotify**:
+5. Now we want to make the script executable. I saved mine as **spotify** in a
+   scripts directory (of which I am inside):
 
    > chmod +x spotify
 
