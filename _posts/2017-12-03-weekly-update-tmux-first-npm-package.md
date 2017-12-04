@@ -2,11 +2,7 @@
 layout: post
 title: 'Weekly Update: Tmux & First NPM Package'
 date: 2017-12-03 22:33:48 -0600
-categories: weekly
----
-
-# WEEKLY UPDATE: TMUX & FIRST NPM PACKAGE
-
+categories: weekly-update
 ---
 
 ## FOCUS
@@ -14,7 +10,7 @@ categories: weekly
 I created my first npm package. It taught me how write, package, and publish
 projects to npm. The joy of it was almost equal to the joy I got from pushing
 getting my first PR merged.
-[eslint-config-cdrainxv](https://github.com/cdrainxv/eslint-config-cdrainxv#readme)
+[eslint-config-cdrainxv](https://github.com/cdrainxv/eslint-config-cdrainxv#readme).
 
 One thing that I always wanted to create was my own library, albeit a small one,
 that was easily maintainable. It seemed out of reach considering all the
@@ -29,21 +25,20 @@ have seen some projects with that same kind of welcoming view to first-time
 contributors which I also want to incorporate in my own libraries, starting with
 this one.
 
----
-
 ## CHANGELOG
-
----
 
 ### vim
 
----
-
-I have picked up some interesting aspects of vim that I either didn't know
-existed or just didn't know how to implement. Here are a few of them:
+Deliberately using vim means that you constatly pick up new things out of
+necessity, lest you revert to your previous editor. Each new thing you pick ,
+add to your .vimrc, and incorporate in your everyday helps to repel some those
+urges, especially when you are used to doing things the most ineffiecent way. I
+have picked up some interesting aspects of vim this week that I either didn't
+know existed or just didn't know how to implement. I feel like I'll be learning
+vim for years, but here are some I learned this week:
 
 <details>
-<summary>Things learned in vim</summary>
+<summary>Things learned in vim:</summary>
 <br>Usage and difference b/t tabs and buffers.
 <br>Autoreload files -- looking at you package.json :rage.
 <br>Write custom snippets using UltiSnips plugin (tutorial upcoming?).
@@ -51,12 +46,11 @@ existed or just didn't know how to implement. Here are a few of them:
 <br>Configure some plugins. Reading the docs has gotten considerably easier.
 </details>
 
+<br>
 I found a great resource to learn
 [**vimscript**](http://learnvimscriptthehardway.stevelosh.com/)! :smile
 
 ### tmux
-
----
 
 Additionally I dived even deeper into tmux. I love how easy it is to integrate
 it with vim. I read another book to help reinforce my understanding of some of
@@ -74,8 +68,6 @@ song playing displayer using applescript. That post is
 
 ## WEEKLY GOALS
 
----
-
 * I didn't get to much of what I listed as goals in last week's
   [Weekly Update](https://cdrainxv.github.io/blog/weekly-update/2017/11/25/weekly-update-dev-setup.html#changelog).
   It's disappointing considering that I want to be able to start seeking out
@@ -91,15 +83,16 @@ song playing displayer using applescript. That post is
 * Finish the **vimscript** book and create something from the knowledge attained
   from it to reinforce the learning.
 
-* Finish the [anml](https://github.com/cdrainxv/anml). By finish I mean have it
-  ready for initial release on npm. Furthermore I noticed some more test cases I
-  have not accounted for as of yet, but I can create PRs for them. I somehow
-  have to get others to contribute to them, based on the merit that it will be a
-  great and easy first-commit.
+* Finish the [anml](https://github.com/cdrainxv/anml) library. By finish I mean
+  have it ready for initial release on npm. Furthermore, I noticed some more
+  test cases I have not accounted for as of yet, but I can create PRs for them
+  after the deploying it. I somehow have to get others to contribute to this
+  repo, with the most enticing reason being that it will be a great and easy
+  first-commit.
 
 * I have several drafts of which I have yet to post. This week I hope to have
   all of them fully written up and posted.
 
 ---
 
-### GOOD LUCK!
+### GOOD LUCK! See you next week!
