@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: cdrainxv
-email: cdrainxv@gmail.com
+email: charlesdrani@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   A record keeping journal of my software development career.
 baseurl: "/blog" # the subpath of your site, e.g. /blog
@@ -32,7 +32,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-compose
-  - jekyll-admin
+  - jemoji
 
 # defaults
 defaults:
