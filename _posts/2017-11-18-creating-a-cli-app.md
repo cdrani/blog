@@ -176,17 +176,17 @@ terminal with the options provided:
 
 Everything seems to be in order now and we are essentially finished based on the
 constraints I setup at the beginning. However I hope to add the following
-functionality soon:
+functionality soon (will get crossed out as updated):
 
-[x] next option to get the next comic
+* [x] next option to get the next comic
 
-[x] previous option to get the previous comic
+* [x] previous option to get the previous comic
 
-[x] random option to get a random comic
+* [x] random option to get a random comic
 
-[] add some tests
+* [ ] add some tests
 
-[x] publish on npm
+* [x] publish on npm
 
 ---
 
