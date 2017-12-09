@@ -2,7 +2,7 @@
 layout: post
 title: 'UlitSnips: Snippets For VIM'
 date: 2017-12-09 14:02:34 -0600
-categories: vim 
+categories: vim
 ---
 
 # INTRO
@@ -101,9 +101,10 @@ endsnippet
 * $0: Another TAB stop, but after inputting data you will exit out of the
   snippet completion.
 
-Here's a demo of it in action:
-/////////////////////////////////////
-/////////////////////////////////////
+Here's a demo of it in action: ![snippets_demo]({{
+"/assets/images/snippets_demo.gif" | absolute_url }})
+
+## REFERENCES
 
 That was just a basic setup and example. To learn more of the features and
 additional configurations reference these sources:
