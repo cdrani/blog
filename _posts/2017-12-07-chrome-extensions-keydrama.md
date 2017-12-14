@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Chrome Extensions: Keydrama'
+title: 'Chrome Extensions: KDRAMA'
 date: 2017-12-07 22:35:19 -0600
 categories: chrome-extensions
 ---
@@ -11,28 +11,32 @@ I **_love_** Korean Dramas the same way some people enjoy telenovellas or soap
 operas. I don't know the exact specifics for this love, but it might be the fact
 that they have limited 16 episode runs, much like a miniseries, with no second
 seasons (or very rarely). Another facet of kdramas that I love is how funny it
-is (in my perspective), regardless if it's portrayed as a comedy.
+is (in my perspective), regardless if it's portrayed as a comedy or drama.
 
 Anyways, I came upon this site,
 [https://goplay.anontpp.com/](https://goplay.anontpp.com/), while traversing
-through reddit. I love the site and the effort made to make it, but the one
-knock against it form me is the fact that it makes use of access tokens that
-expires weekly. When the token expires, I then have to go to the reddit page,
-click a link to redirects me to a page with a button to generate a new token
-key, and then **_finally_** granted access to the full site. I understand the
-reasoning behind this, but I immediately thought there must be a way to
-circumvent these steps that I have to take weekly. What if I could go to the
-site and, upon discovering that my access token has expired and my access is
-denied, just press a **"button"** which would just execute the above steps and
-land me on the site, with a new access token and full site accessibility? Well,
-there is a way: chrome extensions.
+through reddit. I love the site, but the one knock against it from me is the
+fact that it makes use of access tokens that expires weekly. I hate this screen:
+![kdrama_access_denied]({{ "/assets/images/kdrama_access_denied.png" |
+absolute_url }})
+
+When the token expires, I then have to go to the reddit page, click a link to
+redirects me to a page with a button to generate a new token key, and then
+**_finally_** be granted access to the full site. I understand the reasoning
+behind this, but I immediately thought there must be a way to circumvent these
+steps that I have to take weekly. What if I could go to the site and, upon
+discovering that my access token has expired and my access is denied, just press
+a **"button"** which would just execute the above steps and land me on the site,
+with a new access token and full site accessibility? Well, there is a way:
+chrome extensions.
 
 # CHROME EXTENSIONS
 
 [Chrome extensions](https://developer.chrome.com/extensions) are "small software
 programs that enhance the functionality of the Chrome browser". You probably
-have a few of your own decorated on your omnibar and toolbar: (add image link
-here)
+have a few of your own decorated on your omnibar and toolbar:
+
+![kdrama_exts]({{ "/assets/images/kdrama_exts.png" | absolute_url }})
 
 These extensions are written just using html, css, and javascript. In our case,
 we will exclusively use javascript because we don't require any ui interface at
@@ -65,7 +69,7 @@ string), but the manifest_version \**_MUST**\* be **2\**.
 ```json
 {
   "manifest_version": 2,
-  "name": "Keyrama",
+  "name": "KDRAMA",
   "version": "0.1.0"
 }
 ```
@@ -87,7 +91,6 @@ lose detail or look fuzzy. Add these fields in as well:
   "name": "Keyrama",
   "version": "0.1.0",
   "author": "cdrainxv",
-  "default_locale": "en",
   "description": "Bypass token generation for https://goplay.anontpp.com",
   "icons": {
     "16": "images/corvo_16.png",
@@ -131,16 +134,13 @@ notifications like badges, just to list a few.
 
 **PERMISSIONS**
 
-In the same manner that when we download apps on our smart devices
-(phones/tablets), often we will be asked if we consent to the application
-accessing our mail, contact list, photos, etc, chrome makes it a requirement
-that users are notified what the extension has access to before they grant the
-extension "permission" to run on their browser. In our extension we need access
-to the same urls that the content scripts will run in. Additionally, we need
-permission to access the tabs that the user has open as well as the activeTab
-that the activates the extension.
-
----
+When we download apps on our smart devices (phones/tablets), we are often asked
+if we consent to the application accessing our mail, contact list, photos, etc.
+Likewise, chrome makes it a requirement that users are notified what the
+extension has access to before they grant the extension "permission" to run on
+their browser. In our extension we need access to the same urls that the content
+scripts will run in. Additionally, we need permission to access the current tab
+that the user has open.
 
 Now that all of those options have been overviewed, it's time to add them to our
 manifest.json. This will be the state of our file after all the above have been
@@ -149,7 +149,7 @@ included:
 ```json
 {
   "manifest_version": 2,
-  "name": "Keyrama",
+  "name": "KDRAMA",
   "version": "0.1.0",
   "author": "cdrainxv",
   "default_locale": "en",
@@ -161,7 +161,7 @@ included:
     "128": "images/corvo_128.png"
   }
   "browser_action": {
-      "default_title": "Keydrama",
+      "default_title": "KDRAMA",
       "default_icon": "images/corvo_32.png"
   },
   "content_scripts": [
@@ -181,7 +181,6 @@ included:
   "permissions": [
     "https://goplay.anontpp.com/",
     "https://www.reddit.com/r/KDRAMA/*",
-    "activeTab",
     "tabs"
   ]
 }
@@ -189,11 +188,11 @@ included:
 
 Writing the manifest.json file was the hardest part for me, mainly because I had
 to research what permissions the extension would need, how I could access the
-DOM (initially thinking I would need to send messages back and for between the
-background and content scripts), and how poorly written the documentation is
-written (at least in comparison to the ones at mdn). Regardless of those pitiful
-setbacks, I persisted through countless stackoverflow questions and docs before
-I got a working, albeit rough extension.
+DOM (initially thinking I would need to send messages back and forth between the
+background and content scripts), and how poorly written the documentation is (at
+least in comparison to the ones at mdn). Regardless of those initial setbacks, I
+persisted through countless stackoverflow questions and docs before I got a
+working, albeit rough extension.
 
 ## BACKGROUND.JS
 
@@ -238,11 +237,10 @@ which will take us to the page where we can then generate a new token. The
 "update" method takes in the **id** of the tab we wish to update, an object
 where we can set a new url for the tab, and an optional callback. After the
 earlier filtering of the tabs in the "query" method, the filtered tabs are in an
-array, with the one we seek at position 0, as only one matches the urls we have
-permission to access. The
-[tab](https://developer.chrome.com/extensions/tabs#type-Tab) parameter is an
-object provided by google, which gives certain information about the current
-tabs in the window.
+array, with the one we seek at position 0, as only one matches the urls to which
+we have access. The [tab](https://developer.chrome.com/extensions/tabs#type-Tab)
+parameter is an object provided by chrome, which gives certain information about
+the current tabs in the window.
 
 ```js
 var url =
@@ -262,10 +260,10 @@ function updateTab(tab) {
 ```
 
 Okay, our tab is in the process of being updated, but to ensure that it has
-"complete[ed]" fully instead of still in the "loading" phase, we want to add an
-event listener,
+"complete[ed]" fully instead of still being in the "loading" phase, we want to
+add an event listener,
 [onUpdated](https://developer.chrome.com/extensions/tabs#event-onUpdated), that
-can listen in on if the tab has been updated to the new url.
+can listen in on if the tab has been truly updated to the new url.
 
 ```js
 var url =
@@ -323,6 +321,7 @@ function on onTabUpdated(tabId, changeInfo, tab) {
 In the alluded **link.js** script, the context will be the reddit page. On that
 page there's a specific link we want to simulate a click on. Upon the "clicking"
 on it, the link will redirect us to the "Generate Token" page.
+![kdrama_gen_link]({{ "/assets/images/kdrama_gen_link" | absolute_url }})
 
 **js/link.js**
 
@@ -332,8 +331,9 @@ link.click()
 ```
 
 Now back to the **background.js** script. At this point we are at the "Generate
-Token" page. However, to be certain we only want to execute the **gen_token.js**
-script if and _only_ if the title of the tab matches the title of the document.
+Token" page. However, to be certain of that, we only want to execute the
+**gen_token.js** script if and _only_ if the title of the tab matches the title
+of the document.
 
 ```js
 var url =
@@ -368,6 +368,8 @@ On the "Generate Token" page, there's a prominent button that we can simulate a
 "click" event on. Clicking on the button will submit a form that will both
 generate a new token and refresh the page, thus granting us full site access.
 
+![kdrama_gen_btn]({{ "/assets/images/kdrama_gen_btn.png" | absolute_url }})
+
 ```js
 if (document.title === 'Token Generation - Korean Shows HD Streaming') {
   var genButton = document.querySelector('button')
@@ -381,7 +383,7 @@ That's the end of the extension for now. There's some areas for improvement
 however, including this bug where you to click the extension button **_twice_**
 before a new token is generated. I will ultimately fix this issue and some
 others that I have highlighted on the
-[keydrama](https://github.com/cdrainxv/keydrama/issues) issues page.
+[KDRAMA](https://github.com/cdrainxv/KDRAMA/issues) issues page.
 
 ---
 
