@@ -321,7 +321,7 @@ function on onTabUpdated(tabId, changeInfo, tab) {
 In the alluded **link.js** script, the context will be the reddit page. On that
 page there's a specific link we want to simulate a click on. Upon the "clicking"
 on it, the link will redirect us to the "Generate Token" page.
-![kdrama_gen_link]({{ "/assets/images/kdrama_gen_link" | absolute_url }})
+![kdrama_gen_link]({{ "/assets/images/kdrama_gen_link.png" | absolute_url }})
 
 **js/link.js**
 
