@@ -1,5 +1,5 @@
 ---
-(layout: post
+layout: post
 title: Creating A CLI App
 date:   2017-11-18 16:16:31 -0600
 comments: true
