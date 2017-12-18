@@ -7,9 +7,9 @@ categories: weekly-update
 
 ## FOCUS
 
-I created my first npm package. It taught me how write, package, and publish
-projects to npm. The joy of it was almost equal to the joy I got from pushing
-getting my first PR merged.
+I created and published my first npm package! It taught me how write, package,
+and publish projects to npm. The joy of it was almost equal to the joy I got
+from pushing getting my first PR merged.
 [eslint-config-cdrainxv](https://github.com/cdrainxv/eslint-config-cdrainxv#readme).
 
 One thing that I always wanted to create was my own library, albeit a small one,
@@ -19,23 +19,24 @@ previously never seen before. However, I watched this amazing course,
 [Creating an Open Source JavaScript Library](https://www.lynda.com/JavaScript-tutorials/Creating-Open-Source-JavaScript-Library/604269-2.html),
 which proved to be a wealth of knowledge. Following along with it, but
 implementing my own version, I learned a lot relatively quickly about how to
-create, maintain, update, and contribute. The driving message was about making
-your libraries, projects, etc inviting so that others can contribute to it. I
-have seen some projects with that same kind of welcoming view to first-time
-contributors which I also want to incorporate in my own libraries, starting with
-this one.
+create, maintain, update, and make contributions to a library and/or project.
+The driving message was about making your libraries, projects, etc inviting so
+that others can contribute to it. I have seen some projects with that same kind
+of welcoming view to first-time contributors which I also want to incorporate in
+my own libraries, starting with this one.
 
 ## CHANGELOG
 
 ### vim
 
-Deliberately using vim means that you constatly pick up new things out of
-necessity, lest you revert to your previous editor. Each new thing you pick ,
-add to your .vimrc, and incorporate in your everyday helps to repel some those
-urges, especially when you are used to doing things the most ineffiecent way. I
-have picked up some interesting aspects of vim this week that I either didn't
-know existed or just didn't know how to implement. I feel like I'll be learning
-vim for years, but here are some I learned this week:
+Deliberately using vim means that you constantly pick up new things out of
+necessity, lest you revert to your previous editor. Each new thing you pick up ,
+add to your .vimrc, and incorporate in your everyday use helps to repel some of
+those urges, especially when you are used to doing things the most inefficient
+way with your previous editor. I have picked up some interesting aspects of vim
+this week that I either didn't know existed or just didn't know how to
+implement. I feel like I'll be learning vim for years, but here are some tidbits
+I learned this week:
 
 <details>
 <summary>Things learned in vim:</summary>
@@ -48,19 +49,19 @@ vim for years, but here are some I learned this week:
 
 <br>
 I found a great resource to learn
-[**vimscript**](http://learnvimscriptthehardway.stevelosh.com/)! :smile
+[**vimscript**](http://learnvimscriptthehardway.stevelosh.com/)!
 
 ### tmux
 
-Additionally I dived even deeper into tmux. I love how easy it is to integrate
-it with vim. I read another book to help reinforce my understanding of some of
-the commands, but also what is happening in the background, such as how the
-servers are spun and where they exist. One thing that I did come across was
-[gpakosz][https://github.com/gpakosz/.tmux] when I was looking into customizing
+Additionally, I dived even deeper into tmux. I love how easy it is to integrate
+it with vim as well. I read another book to help reinforce my understanding of
+some of the commands, but also what is happening in the background, such as how
+the servers are spun and where they exist. One thing that I did come across was
+[gpakosz](https://github.com/gpakosz/.tmux) when I was looking into customizing
 my tmux status-line from the default bland one. That repo boasts extensive
 configurability, coming fully loaded with battery status, time, date, powerline
-symbols, etc, however the added bonus is the builtin binds. These are very easy
-to learn and memorize, considering that they are set to be familiar to vim
+symbols, etc, however the added bonus is the builtin bindings. These are very
+easy to learn and memorize, considering that they are set to be familiar to vim
 users, making use of the same directional, and vi-copy/paste commands. This
 inspired me to write my own plugin to add to the tmux status-line, a spotify
 song playing displayer using applescript. That post is
@@ -72,13 +73,12 @@ song playing displayer using applescript. That post is
   [Weekly Update](https://cdrainxv.github.io/blog/weekly-update/2017/11/25/weekly-update-dev-setup.html#changelog).
   It's disappointing considering that I want to be able to start seeking out
   jobs by the end-of-the-year/beginning-of-the-new-year time frame. It's an
-  ambitious goal, but I have to set some kind of goals if I want to jump-start
-  my career in software development early in 2018. It's not that I don't know
-  react (I do), it's a matter of having a better grasp of it (and learning
-  testing and incorporating redux (or some form of state management)). This week
-  I will strive to create and post (here and a live version) of projects
-  (regardless of size and difficulty), which both incorporate redux and some
-  testing.
+  ambitious goal, but I have to set some kind of goal if I want to jump-start my
+  career in software development early in 2018. It's not that I don't know react
+  (I do), it's a matter of having a better grasp of it (and learning testing and
+  incorporating redux (or some form of state management)). This week I will
+  strive to create and post (here and a live version) of projects (regardless of
+  size and difficulty), which both incorporate redux and some testing.
 
 * Finish the **vimscript** book and create something from the knowledge attained
   from it to reinforce the learning.
