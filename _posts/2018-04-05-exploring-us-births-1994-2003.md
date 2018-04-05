@@ -41,7 +41,12 @@ data2 = f.readlines()
 data2
 ```
 
-    []
+['player,team,pos,number\n',
+'K. Durant,Golden State Warriors,SF,35\n',
+'L. James,Cleveland Cavaliers,SF,23\n',
+'J. Harden,Houston Rockets,SG,13\n',
+'R. Westbrook,OKC Thunder,PG,0\n',
+'J. Embiid,Philidelphia 76ers,21\n']
 
 We have several ways to read files into memory. Two of them are shown above, **read()** and **readlines()**. **read** returns our file in a long continuous **_string_**, while **readlines()** returns it in a **_list_**. Notice the escaped characters for newlines and carriage returns. The **read()** option seems the easier one to work with for the above file, there we need to remove the newline characters by splitting it at **\n**. This returns a list with each data row being a distinct element.
 
