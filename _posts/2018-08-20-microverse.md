@@ -13,15 +13,15 @@ During the months since the last post, I must regretfully say that I did not go 
 
 Therefore, I was very happy to stumble upon [Microverse](microverse.org) from a medium post by its creator   Ariel Camus, and one of its students, Kyle Lemon. Microverse is a remote oriented software development 'bootcamp' in the sense that it includes all of the fundamentals:
 
-- HTML/CSS
-- Javascript
-- React
-- NodeJS
-- Ruby
-- Ruby on Rails
-- Algorithms/Data Structures
-- Job Preparation
-- Mock Interviews
+    - HTML/CSS
+    - Javascript
+    - React
+    - NodeJS
+    - Ruby
+    - Ruby on Rails
+    - Algorithms/Data Structures
+    - Job Preparation
+    - Mock Interviews
 
 ### However, the entire curriculum is remote!
 

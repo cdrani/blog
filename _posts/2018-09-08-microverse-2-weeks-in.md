@@ -11,10 +11,10 @@ I have been in the Microverse Remote Software Development program for about two 
 
 #### NEW OR REFINED KNOWLEDGE
 
-- Utilize background-images / linear-gradients
-- solidified flex-box and css grid
-- solidified understanding of ES6+ classes, imports and exports
-- faster approach in solving algorithms; better at explaining approaches and line of thinking
+    - Utilize background-images / linear-gradients
+    - solidified flex-box and css grid
+    - solidified understanding of ES6+ classes, imports and exports
+    - faster approach in solving algorithms; better at explaining approaches and line of thinking
 
 # BENEFITS
 
